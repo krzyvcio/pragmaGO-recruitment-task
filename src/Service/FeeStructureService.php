@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Service;
 
+// FeeStructureService class is responsible for managing the fee structure
 class FeeStructureService
 {
 
-
+    // Define the fee structure for 12 and 24 month terms
     private const FEE_STRUCTURE = [
         12 => [
             1000 => 50, 2000 => 90, 3000 => 90, 4000 => 115, 5000 => 100,
@@ -23,6 +24,8 @@ class FeeStructureService
         ]
     ];
 
+
+    // The getFeeStructure method takes the term as a parameter
     public function getFeeStructure(int $term): array
     {
         if (!isset(self::FEE_STRUCTURE[$term])) {
@@ -31,16 +34,19 @@ class FeeStructureService
         return self::FEE_STRUCTURE[$term];
     }
 
+    // The getAvailableTerms method returns the available terms
     public function getAvailableTerms(): array
     {
         return array_keys(self::FEE_STRUCTURE);
     }
 
+    // The getMinAmount method takes the term as a parameter
     public function getMinAmount(int $period): float
     {
         return min(array_keys(self::FEE_STRUCTURE[$period]));
     }
 
+    // The getMaxAmount method takes the term as a parameter
     public function getMaxAmount(int $period): float
     {
         return max(array_keys(self::FEE_STRUCTURE[$period]));
