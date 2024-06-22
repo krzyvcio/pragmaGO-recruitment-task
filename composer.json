@@ -5,11 +5,23 @@
         {
             "name": "Piotr Ścibor",
             "email": "piotr.scibor@pragmago.tech"
+        },
+        {
+            "name": "Michał Rusin",
+            "email": "rusinm@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
             "PragmaGoTech\\Interview\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PragmaGoTech\\Interview\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
